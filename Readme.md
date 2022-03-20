@@ -8,7 +8,7 @@
 # Inicializando el proyecto
 - Clonar el repositorio
 ```
-git clone https://github.com/DiplomadoDevOps2021/diplo_repo.git
+git clone https://github.com/DiplomadoDevOps2021/LabM4.git
 ```
 - Instalar dependencias
 ```
@@ -17,6 +17,6 @@ npm install
 ```
 - EJecutar el proyecto
 ```
-npm run dev
+npm start
 ```
- Navigate to `http://localhost:4000`
+ Navigate to `http://localhost:4001`
