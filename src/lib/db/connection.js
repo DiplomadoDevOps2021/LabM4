@@ -1,5 +1,5 @@
-import dotenv from 'dotenv';
-import pgp from './pgp.js';
+const dotenv = require('dotenv');
+const pgp = require('./pgp.js');
 
 dotenv.config()
 
@@ -12,4 +12,4 @@ const connection = {
 }
 
 const db = pgp(connection); // database instance;
-export default db;
+module.exports = db;

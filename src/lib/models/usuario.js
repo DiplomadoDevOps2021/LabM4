@@ -1,5 +1,5 @@
-import pgp from './../db/pgp.js';
-import db from './../db/connection.js';
+const pgp = require('./../db/pgp.js');
+const db = require('./../db/connection.js');
 
 
 class Usuario {
@@ -87,4 +87,4 @@ class Usuario {
 
 }
 
-export default Usuario;
+module.exports =  Usuario;

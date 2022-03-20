@@ -1,26 +1,24 @@
-import express from 'express';
+const express = require('express');
 // seguridad & relacionado
-import cors from 'cors';
+var cors = require('cors');
 // var csurf = require('csurf')
-import session from 'express-session';
-import helmet from 'helmet';
+var session = require('express-session');
+const helmet = require('helmet');
 // TODO : CSRF, XSS, JWT
 //
 
-import morgan from 'morgan';
-import { engine } from 'express-handlebars';
-import path from 'path';
-import pkg from 'handlebars';
-const { helpers } = pkg;
-const {pathname: root} = new URL('../src', import.meta.url)
+const morgan = require('morgan');
+const { engine } = require('express-handlebars');
+const path = require('path');
+const { helpers } = require('handlebars');
 
 
 //initializations
 const app = express();
 
 //settings
-app.set('port', process.env.PORT || 4000);
-app.set('views', path.join(root, 'views'));
+app.set('port', process.env.PORT || 4001);
+app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs', engine({
     defaultLayout: 'main',
     layoutsDir: path.join(app.get('views'), 'layouts'),
@@ -73,12 +71,12 @@ app.use((req, res, next) => {
 });
 
 //Routes
-import retiro10 from './routes/retiro10.js';
+const retiro10 =  require('./routes/retiro10.js');
 app.use('/', retiro10);
 
 
 //Public
-app.use(express.static(path.join(root, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 //Starting the server
 app.listen(app.get('port'), () => {

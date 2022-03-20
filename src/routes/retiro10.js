@@ -1,4 +1,4 @@
-import express from 'express';
+const express = require('express');
 const router = express.Router();
 
 
@@ -11,4 +11,4 @@ router.post('/retiro10', (req, res) =>{
     res.send('received');
 })
 
-export default router;
+module.exports =  router;
